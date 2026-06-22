@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+// import "./globals.css";
 import SiteShell from "@/components/SiteShell";
 
 const SITE_URL = "https://charmlings.example.com"; // ← change to your real domain
