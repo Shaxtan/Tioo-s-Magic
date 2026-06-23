@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-// import "./";
+import "./globals.css";
 import SiteShell from "@/components/SiteShell";
 
 const SITE_URL = "https://tioo-s-magic-xw3f.vercel.app"; // ← change to your real domain
