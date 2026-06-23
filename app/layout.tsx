@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-// import "./globals.css";
+// import "./";
 import SiteShell from "@/components/SiteShell";
 
-const SITE_URL = "https://charmlings.example.com"; // ← change to your real domain
+const SITE_URL = "https://tioo-s-magic-xw3f.vercel.app"; // ← change to your real domain
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

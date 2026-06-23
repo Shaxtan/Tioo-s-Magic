@@ -14,6 +14,7 @@ type CartValue = {
   add: (slug: string) => void;
   step: (slug: string, delta: number) => void;
   remove: (slug: string) => void;
+  clearCart: () => void;
   open: () => void;
   close: () => void;
 };
@@ -57,6 +58,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setLines((prev) => prev.filter((l) => l.slug !== slug));
   }, []);
 
+  const clearCart = useCallback(() => {
+    setLines([]);
+  }, []);
+
   const count = lines.reduce((s, l) => s + l.qty, 0);
   const subtotal = lines.reduce((s, l) => {
     const p = products.find((x) => x.slug === l.slug);
@@ -67,7 +72,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     <CartCtx.Provider
       value={{
         lines, count, subtotal, isOpen, toast,
-        add, step, remove,
+        add, step, remove, clearCart,
         open: () => setIsOpen(true),
         close: () => setIsOpen(false),
       }}

@@ -1,15 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ShoppingBag, X, Plus, Minus, Sparkles } from "lucide-react";
 import { products, inr } from "@/lib/products";
 import { useCart } from "./CartContext";
+import CheckoutButton from "./CheckoutButton";
 
 export default function CartDrawer() {
-  const { lines, isOpen, close, step, remove, subtotal, count, toast } = useCart();
-  const [checkedOut, setCheckedOut] = useState(false);
+  const { lines, isOpen, close, step, remove, subtotal, count, toast, clearCart } = useCart();
 
   return (
     <>
@@ -67,16 +66,12 @@ export default function CartDrawer() {
                   </div>
                   <div className="drawer-foot">
                     <div className="subtotal"><span>Subtotal</span><strong>{inr(subtotal)}</strong></div>
-                    <p className="ship-note">Shipping &amp; taxes calculated at checkout</p>
-                    {checkedOut ? (
-                      <div className="checkout-note">
-                        ✦ This is where <strong>Shopify checkout + Razorpay</strong> will connect — payments aren&apos;t wired up yet.
-                      </div>
-                    ) : (
-                      <button className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }} onClick={() => setCheckedOut(true)}>
-                        Checkout · {inr(subtotal)}
-                      </button>
-                    )}
+                    <p className="ship-note">Free shipping across India 🇮🇳</p>
+                    <CheckoutButton
+                      lines={lines}
+                      subtotal={subtotal}
+                      onSuccess={() => { clearCart(); close(); }}
+                    />
                   </div>
                 </>
               )}
