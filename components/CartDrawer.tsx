@@ -64,7 +64,7 @@ export default function CartDrawer() {
                       );
                     })}
                   </div>
-                  <div className="drawer-foot">
+                  <div className="drawer-foot" style={{ overflowY: "auto", maxHeight: "60vh" }}>
                     <div className="subtotal"><span>Subtotal</span><strong>{inr(subtotal)}</strong></div>
                     <p className="ship-note">Free shipping across India 🇮🇳</p>
                     <CheckoutButton
