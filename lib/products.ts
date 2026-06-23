@@ -18,7 +18,7 @@ export const products: Product[] = [
     tagline: "A tiny bunny nestled in a ripe strawberry.",
     description:
       "A hand-sculpted bunny peeking out of a glossy red strawberry, finished with a soft blush and a phone-strap cord. Made to order, one at a time.",
-    price: 299,
+    price: 1,
     category: "Animal charms",
     image: "/products/strawberry-bunny.jpeg",
     alt: "Handmade clay bunny sitting in a red strawberry charm",
@@ -30,7 +30,7 @@ export const products: Product[] = [
     tagline: "A blushing piglet with a little bun on top.",
     description:
       "A round, rosy piglet topped with a freshly baked bun. Sculpted and sealed by hand, ready to clip onto a phone, bag, or keys.",
-    price: 279,
+    price: 9,
     category: "Animal charms",
     image: "/products/piggy-bun.jpeg",
     alt: "Handmade pink clay piglet charm with a bun on its head",
@@ -42,7 +42,7 @@ export const products: Product[] = [
     tagline: "A kitty stacked high in a juicy burger.",
     description:
       "A sleepy cat face crowning a tiny cheeseburger — lettuce, tomato, cheese and all. A pocket-sized snack that never goes stale.",
-    price: 329,
+    price: 9,
     category: "Food charms",
     image: "/products/cheeseburger-kitty.jpeg",
     alt: "Handmade clay cat cheeseburger charm",
