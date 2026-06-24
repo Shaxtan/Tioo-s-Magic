@@ -139,7 +139,13 @@ function DeliveryModal({ subtotal, lines, onClose, onPaid }: {
           const verifyRes = await fetch("/api/verify-payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ...response, deliveryDetails: details }),
+            // body: JSON.stringify({ ...response, deliveryDetails: details }),
+            body: JSON.stringify({
+  ...response,
+  deliveryDetails: details,
+  subtotal,
+  items: lines.map(l => `${l.qty}× ${l.slug}`).join(", "),
+}),
           });
           if (!verifyRes.ok) {
             setError("Payment done but confirmation failed. Save this ID: " + response.razorpay_payment_id);
